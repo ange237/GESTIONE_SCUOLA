@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'iscrizione_esame_corso',
     'iscrizione_corso',
     'risultato_esame_corso',
+    'categoria',
+    'esame',
 ]
 
 MIDDLEWARE = [
