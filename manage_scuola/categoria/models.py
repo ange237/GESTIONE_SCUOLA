@@ -5,6 +5,6 @@ from django.db import models
 "una categoria   è rappresentata dal suo id e dal suo nome,"
 ""
 
-class Ctegoria(models.Model):
+class Categoria(models.Model):
      #l id viene gestito automaticamente da django
      name = models.CharField(max_length=255)

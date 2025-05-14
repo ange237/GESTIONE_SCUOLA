@@ -1,0 +1,22 @@
+{% extends 'docente/base.html' %}
+
+{% block title %}Lista dei Corsi del docente  {{nome}} : matricola {{matricola}}{% endblock %}
+
+{% block content %}
+    <h1>Lista dei Corsi del docente  {{nome}} : matricola {{matricola}}</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Corso(i)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for corso in lista %}
+                <tr>
+                    <td>{{corso}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'studente/base.html' %}
+
+{% block title %}Lista dei Corsi Disponibili{% endblock %}
+
+{% block content %}
+    <h1>Lista dei Corsi</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Docente</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for corso in corsi %}
+                <tr>
+                    <td>{{ corso.id }}</td>
+                    <td>{{ corso.name }}</td>
+                    <td>{{ corso.id_docente }}</td>
+                    <td>{{ corso.cost }}</td>
+
+                    <td>
+                        <!-- Pulsante per cancellare studente -->
+                        <form action="{% url 'cancella_cor' corso.id %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm">Cancella</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Pulsante per aggiungere un nuovo studente, centrato in fondo -->
+    <div class="text-center mt-4">
+        <a href="{% url 'add_cors' %}" class="btn btn-success">Aggiungi Corso/a>
+    </div>
+{% endblock %}

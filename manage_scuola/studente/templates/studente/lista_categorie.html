@@ -1,0 +1,24 @@
+{% extends 'studente/base.html' %}
+
+{% block title %}Lista Categorie{% endblock %}
+
+{% block content %}
+    <h1>Lista Categorie</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cat in categorie %}
+                <tr>
+                    <td>{{ cat.id }}</td>
+                    <td>{{ cat.name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

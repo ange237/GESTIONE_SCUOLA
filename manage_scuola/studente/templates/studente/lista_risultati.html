@@ -1,0 +1,28 @@
+{% extends 'studente/base.html' %}
+
+{% block title %}Lista dei Risultati{% endblock %}
+
+{% block content %}
+    <h1>Lista dei Risultati</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Id studente</th>
+                <th>Id corso</th>
+                <th>voto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ris in risultati %}
+                <tr>
+                    <td>{{ ris.id }}</td>
+                    <td>{{ ris.id_studente }}</td>
+                    <td>{{ ris.id_corso }}</td>
+                    <td>{{ ris.voto }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

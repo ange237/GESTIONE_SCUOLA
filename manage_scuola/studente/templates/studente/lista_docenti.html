@@ -1,0 +1,47 @@
+{% extends 'studente/base.html' %}
+
+{% block title %}Lista dei Docenti{% endblock %}
+
+{% block content %}
+    <h1>Lista dei Docenti</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Genere</th>
+                <th>Data di Nascita</th>
+                <th>Esperienza</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for docente in docenti %}
+                <tr>
+                    <td>{{ docente.id }}</td>
+                    <td>{{ docente.name }}</td>
+                    <td>{{ docente.surname }}</td>
+                    <td>{{ docente.gender }}</td>
+                    <td>{{ docente.birth }}</td>
+                    <td>{{ docente.experience }}</td>
+                    <td>
+                        
+                        <!-- Pulsante per visualizzare corsi -->
+                        <a href="{% url 'corsi_doc' docente.id %}" class="btn btn-info btn-sm">Visualizza Corsi</a>
+
+                        <!-- Pulsante per cancellare studente -->
+                        <form action="{% url 'cancella_doc' docente.id %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm">Cancella</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- Pulsante per aggiungere un nuovo studente, centrato in fondo -->
+    <div class="text-center mt-4">
+        <a href="{% url 'add_stud' %}" class="btn btn-success">Aggiungi Docente</a>
+    </div>
+{% endblock %}

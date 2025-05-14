@@ -16,3 +16,19 @@ class Studente (models.Model):
             MaxLengthValidator(1)
         ])
     birth = models.DateField(null = True) # fomato data : YYYY-MM-DD
+    
+    """queste funzioni agiscono sul singolo oggetto"""
+    def get_id(self):
+        return self.id
+    
+    def get_name(self):
+        return self.name
+    
+    def get_surname(self):
+        return self.surname
+    
+    def get_gender(self):
+        return self.gender
+    
+    def get_birth(self):
+        return self.birth
