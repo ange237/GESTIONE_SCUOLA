@@ -43,14 +43,14 @@ def add_studente(request):
   #return redirect('studenti')"""
 
 def del_student(request, id):
-    studente = get_object_or_404(Studente, id=id)
+   studente = get_object_or_404(Studente, id=id)
 
-    if request.method == 'POST':
-        studente.delete()
-        return redirect('studenti')  # Usa il name della URL della lista studenti
+   if request.method == 'POST':
+      studente.delete()
+      return redirect('studenti')  # Usa il name della URL della lista studenti
 
     # Se uno prova ad accedere via GET, reindirizzi alla lista (opzionale)
-    return redirect('studenti')
+   return redirect('studenti')
 
 
 #funzione per iscrivere uno studente ad un corso
@@ -80,6 +80,7 @@ def viz_corsi_studente(request,id):
 """def viz_esami_studente(request,id_studente):
    #coinvolgera la tabella esame 
    return lista_iscrizione_esame_studente(id_studente)"""
+
 
 
 #funzione per  elencare i voti di uno studente agli esami che ha superato

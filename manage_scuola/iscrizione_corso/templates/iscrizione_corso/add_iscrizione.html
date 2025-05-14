@@ -1,0 +1,11 @@
+{% extends 'iscrizione_corso/base.html' %}
+{% block content %}
+  <div class="container">
+    <h2>Nuova Iscrizone</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- oppure as_table o as_ul -->
+        <button type="submit" class="btn btn-success">Iscrivi</button>
+    </form>
+  </div>
+{% endblock %}

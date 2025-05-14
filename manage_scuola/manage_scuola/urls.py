@@ -27,11 +27,15 @@ urlpatterns = [
     path('admin/', admin.site.urls), 
     path('',home, name='home'), # per la home page
     path('studenti/',student_list, name='studenti'), # lista studenti    
+    path('iscrizioni/',list_iscrizioni, name='iscrizioni'), # lista iscrizioni
     #path('categorie/',lista_category, name='categorie'), #lista categorie
     path('corsi/',lista_corsi, name='corsi'), #lista corsi
     path('docenti/',lista_docenti, name='docenti'), #lista docenti
     path('risultati/',lista_risultati, name='risultati'), #risultati
     path('add_stud/',add_studente, name='add_stud'), #add uno studente
+
+    path('add_iscrizione/',add_iscrizione, name='add_iscri'), #add iscrizione
+
     #path('studenti/', views.lista_studenti, name='lista_studenti')
     path('cancella_studente/<int:id>/',del_student, name='cancella'),  #cancellare uno studente
     path('cancella_docente/<int:id>/',del_docente, name='cancella_doc'),# cancella docente

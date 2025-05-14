@@ -29,6 +29,8 @@
                         <!-- Pulsante per visualizzare corsi -->
                         <a href="{% url 'corsi_stud' studente.id %}" class="btn btn-info btn-sm">Visualizza Corsi</a>
 
+                        <a href="{% url 'corsi_stud' studente.id %}" class="btn btn-info btn-sm">Iscrivi</a>
+
                         <!-- Pulsante per cancellare studente -->
                         <form action="{% url 'cancella' studente.id %}" method="POST" style="display:inline;">
                             {% csrf_token %}
